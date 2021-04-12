@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const os = require('os');
+const ip = require('ip');
 
 const PORT = process.env.PORT || 8080;
 
@@ -27,5 +29,9 @@ app.use(htmlRoutes);
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`
-    📡 The app is listening on PORT ${PORT}.`);
+    📡 The app is listening on PORT:${PORT}
+
+    🌐 local: http://${os.hostname()}:${PORT} || http://${ip.address()}:${PORT}
+
+    `);
 });
