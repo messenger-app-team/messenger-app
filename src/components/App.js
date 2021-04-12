@@ -1,9 +1,19 @@
 import React from "react";
-import HelloReact from "./login";
+import Signup from "./Signup";
+import {AuthProvider} from '../contexts/AuthContext';
 
 
 function App() {
-  return <HelloReact/>;
+  return(
+    <>
+    <AuthProvider>
+
+        <Signup/>;
+
+
+    </AuthProvider>
+   </>
+  )
 }
 
 export default App;
