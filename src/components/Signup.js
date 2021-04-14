@@ -13,7 +13,10 @@ function Signup() {
 
   async function handleSubmit(e){
     e.preventDefault()
-      if(passwordRef.current.value !== passwordConfirmRef){
+      if(passwordRef.current.value !== passwordConfirmRef.current.value){
+        console.log(passwordRef.current.value)
+        console.log(passwordConfirmRef)
+
         return setError('Passwords do not match')
        
       }
@@ -31,7 +34,7 @@ function Signup() {
   return (
      <>
 <div className=" flex items-center justify-center h-screen">
-<div>user one: {JSON.stringify(currentUser)}</div>
+{/* <div>user one: {JSON.stringify(currentUser)}</div> */}
 <div>error message {error}</div>
   
   <form onSubmit={handleSubmit} className="w-3/12 bg-none shadow-md rounded px-8 pt-6 pb-8 mb-4 flex items-center flex flex-col">
@@ -53,7 +56,7 @@ function Signup() {
       <label className="block text-grey-darker text-sm font-bold mb-2" for="password">
         Password
       </label>
-      <input className=" text-black shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="password" type="password" placeholder="******************" ref={passwordConfirmRef}/>
+      <input className=" text-black shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="Confirm Password" type="password" placeholder="******************" ref={passwordConfirmRef}/>
       <p className="text-red text-xs italic">Confirm password</p>
     </div>
     <div className="flex items-center justify-between">
