@@ -7,7 +7,7 @@ const Send = () => {
 };
 
 return (
-    <Button onClick={sendMesseng}>Send</Button>
+    <Button onClick={Send}>Send</Button>
 );
 
 export default Send;
