@@ -35,5 +35,6 @@ mongoose.connect(
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   console.log(`
-    📡 The app is listening on PORT ${PORT}.`);
+    📡 The app is listening on PORT ${PORT}.
+    `);
 });
