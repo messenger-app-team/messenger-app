@@ -4,12 +4,16 @@ import InputBox from './InputBox';
 import MsgArea from './MsgArea';
 import Send from './Send';
 
-function chatApp() {
+function ChatApp() {
     return(
         <>
             <div className='message-window'>
-                
+                <MsgArea/>
+                <Avatar/>
+                <InputBox/><Send/> 
             </div>
         </>
     )
 };
+
+export default ChatApp

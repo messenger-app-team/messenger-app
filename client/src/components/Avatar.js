@@ -1,11 +1,11 @@
 // this is avatar 
-import React from "react";
+import React, { Component } from 'react';
 
 class Avatar extends Component {
     render() {
         return (
             <div className="avatar" />
-        );
+      ); 
     }
 };
 
