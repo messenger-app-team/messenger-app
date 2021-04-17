@@ -9,18 +9,25 @@ import Contacts from '../Contacts';
 // import Send from './Send';
 
 function ChatApp() {
+  const [msgValue, setMsgValue] = useState('')
+
+  const addUser = (newMsg) => {
+    console.log(newMsg)
+    setMsgValue(newMsg)
+  };
+
   return (
     <>
       <NavBar />
 
       <Container>
 
-            <Contacts />
+        <Contacts />
 
         <div className='message-window fixed-bottom'>
-          <MsgArea />
+          <MsgArea value={msgValue} />
           {/* <Avatar /> */}
-          <InputBox />
+          <InputBox fun={addUser} />
           {/* <Send /> */}
         </div>
       </Container>
