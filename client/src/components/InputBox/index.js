@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
+import './style.css';
 
 class InputBox extends Component {
   constructor(props) {
@@ -20,9 +21,10 @@ class InputBox extends Component {
 
   render() {
     return (
-      <InputGroup className='mb-3'>
+      <InputGroup className='mb-3 msg-input'>
         <FormControl
-          type="text" onChange={this.updateInput}
+          type='text'
+          onChange={this.updateInput}
           placeholder='Message'
           aria-label='Message'
           aria-describedby='basic-addon2'

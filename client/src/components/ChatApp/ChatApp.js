@@ -5,6 +5,7 @@ import './style.css';
 import NavBar from '../NavBar';
 import InputBox from '../InputBox/index';
 import MsgArea from '../MsgArea';
+import Contacts from '../Contacts';
 // import Send from './Send';
 
 function ChatApp() {
@@ -13,6 +14,9 @@ function ChatApp() {
       <NavBar />
 
       <Container>
+
+            <Contacts />
+
         <div className='message-window fixed-bottom'>
           <MsgArea />
           {/* <Avatar /> */}
