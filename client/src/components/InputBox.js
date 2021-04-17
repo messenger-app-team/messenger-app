@@ -5,6 +5,11 @@ import Button from 'react-bootstrap/Button';
 
 class InputBox extends Component {
   render() {
+    function handleClick(e) {
+      e.preventDefault();
+      console.log('Send was clicked.');
+    }
+
     return (
       // <div clasName='input-container'>
       //   <input
@@ -15,14 +20,16 @@ class InputBox extends Component {
       //   />
       // </div>
 
-       <InputGroup className="mb-3">
+      <InputGroup className='mb-3'>
         <FormControl
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
+          placeholder='Message'
+          aria-label='Message'
+          aria-describedby='basic-addon2'
         />
         <InputGroup.Append>
-          <Button variant="outline-secondary">Button</Button>
+          <Button onClick={handleClick} variant='outline-secondary'>
+            Send
+          </Button>
         </InputGroup.Append>
       </InputGroup>
     );

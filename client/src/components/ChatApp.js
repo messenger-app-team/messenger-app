@@ -7,11 +7,11 @@ import Send from './Send';
 function ChatApp() {
   return (
     <>
-      <div className='message-window'>
+      <div className='message-window fixed-bottom'>
         <MsgArea />
-        <Avatar />
+        {/* <Avatar /> */}
         <InputBox />
-        <Send />
+        {/* <Send /> */}
       </div>
     </>
   );
