@@ -8,15 +8,16 @@ class InputBox extends Component {
     function handleClick(e) {
       e.preventDefault();
       console.log('Send was clicked.');
+      // Button.
     }
 
     return (
-      // <div clasName='input-container'>
+      // <div className='input-container'>
       //   <input
       //     id='msg-input'
       //     className='msg-input'
       //     type='text'
-      //     placehodler='Message...'
+      //     placeholder='Message...'
       //   />
       // </div>
 

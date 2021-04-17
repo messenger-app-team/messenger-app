@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Avatar from '../Avatar/Avatar';
-import Card from 'react-bootstrap/Card';
+import { Col, Row } from 'react-bootstrap';
+// import Avatar from '../Avatar/Avatar';
 
 class MsgArea extends Component {
   render() {
@@ -12,8 +12,24 @@ class MsgArea extends Component {
       //     </div>
       // </li>
       <div className='msg-area'>
-        <p class='sent-msg'>Sent Message</p>
-        <p class='rcvd-msg'>Recieved Message</p>
+        {/* <Row>
+          <Col md={4}>
+            <p class='rcd-msg'>Received Message</p>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={{ span: 4, offset: 4 }}>
+            <p class='sent-msg'>Sent Message</p>
+          </Col>
+        </Row> */}
+
+        <div class='d-flex flex-row'>
+          <div class='p-2'>Received Messages</div>
+        </div>
+        <div class='d-flex flex-row-reverse'>
+          <div class='p-2'>Sent Messages</div>
+        </div>
       </div>
     );
   }
