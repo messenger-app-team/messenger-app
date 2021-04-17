@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Nav } from 'react-bootstrap';
+import { Nav, Badge } from 'react-bootstrap';
+import './style.css';
 
 // create the side bar for contacts here and add on the left or right side of the chat app div
 
@@ -9,10 +10,16 @@ class Contacts extends Component {
         return (
           <div className='contact-list'>
             <Nav defaultActiveKey='/home' className='flex-column'>
-              <Nav.Link eventKey='link-1'>Haley</Nav.Link>
-              <Nav.Link eventKey='link-2'>JZ</Nav.Link>
-              <Nav.Link eventKey='link-3'>Ray</Nav.Link>
-              <Nav.Link eventKey='link-4'>
+              <Nav.Link eventKey='link-1' className='user-contact'>
+                Haley
+              </Nav.Link>
+              <Nav.Link eventKey='link-2' className='user-contact'>
+                JZ
+              </Nav.Link>
+              <Nav.Link eventKey='link-3' className='user-contact'>
+                Ray
+              </Nav.Link>
+              <Nav.Link eventKey='link-4' className='user-contact'>
                 Ruben
               </Nav.Link>
             </Nav>

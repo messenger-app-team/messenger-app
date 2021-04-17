@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { Col, Row } from 'react-bootstrap';
-// import Avatar from '../Avatar/Avatar';
+import './style.css';
+
 
 class MsgArea extends Component {
   render() {

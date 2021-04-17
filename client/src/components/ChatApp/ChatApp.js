@@ -14,11 +14,9 @@ function ChatApp() {
       <NavBar />
 
       <Container>
-        <div className='row'>
-          <div className='flex-col'>
+
             <Contacts />
-          </div>
-        </div>
+
         <div className='message-window fixed-bottom'>
           <MsgArea />
           {/* <Avatar /> */}
