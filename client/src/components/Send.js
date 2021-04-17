@@ -2,12 +2,13 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const Send = () => {
-    console.log("click")
+// const Send = () => {
+//     console.log("click")
+// };
+
+function Send() {
+    return <Button onClick={console.log('click')}>Send</Button>;
 };
 
-return (
-    <Button onClick={Send}>Send</Button>
-);
 
 export default Send;
