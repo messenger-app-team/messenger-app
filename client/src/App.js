@@ -6,15 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
   return(
-    <Signup/>
-  //   <>
-  //   <AuthProvider>
-
-  //       <Signup/>;
-
-
-  //   </AuthProvider>
-  //  </>
+    // <Signup/>
+    <>
+    <AuthProvider>
+        <Signup/>;
+    </AuthProvider>
+   </>
   )
 }
 
