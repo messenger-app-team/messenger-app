@@ -1,26 +1,24 @@
 // import logo from './logo.svg';
 import './App.css';
 import Signup from "./components/Signup";
-import ChatApp from './components/ChatApp'
+import ChatApp from './components/ChatApp';
 import {AuthProvider} from './contexts/AuthContext';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
-  return(
-    // <ChatApp/>
-    <Signup/>
+  return (
+    <ChatApp />
+    // <Signup/>
 
-  //   <>
-  
+    //   <>
 
-  //   <AuthProvider>
+    //   <AuthProvider>
 
-  //       <Signup/>;
+    //       <Signup/>;
 
-
-  //   </AuthProvider>
-  //  </>
-  )
+    //   </AuthProvider>
+    //  </>
+  );
 }
 
 export default App;

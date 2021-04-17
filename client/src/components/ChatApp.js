@@ -5,15 +5,16 @@ import MsgArea from './MsgArea';
 import Send from './Send';
 
 function ChatApp() {
-    return(
-        <>
-            <div className='message-window'>
-                <MsgArea/>
-                <Avatar/>
-                <InputBox/><Send/> 
-            </div>
-        </>
-    )
-};
+  return (
+    <>
+      <div className='message-window'>
+        <MsgArea />
+        <Avatar />
+        <InputBox />
+        <Send />
+      </div>
+    </>
+  );
+}
 
-export default ChatApp
+export default ChatApp;

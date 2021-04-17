@@ -2,13 +2,13 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-// const Send = () => {
-//     console.log("click")
-// };
-
 function Send() {
-    return <Button onClick={console.log('click')}>Send</Button>;
-};
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('Send was clicked.');
+  }
 
+  return <Button onClick={handleClick}>Send</Button>;
+}
 
 export default Send;
