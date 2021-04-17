@@ -1,12 +1,14 @@
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 // import Avatar from './Avatar';
-import InputBox from '../InputBox/InputBox';
-import MsgArea from '../MsgArea/MsgArea';
+import NavBar from '../NavBar';
+import InputBox from '../InputBox/index';
+import MsgArea from '../MsgArea';
 // import Send from './Send';
 
 function ChatApp() {
   return (
     <div className='container'>
+      <NavBar />
       <div className='message-window fixed-bottom'>
         <MsgArea />
         {/* <Avatar /> */}
