@@ -7,17 +7,17 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
   return (
-    <ChatApp />
-    // <Signup />
+    
+   
+      <>
+      <ChatApp />
 
-    //   <>
+      <AuthProvider>
 
-    //   <AuthProvider>
+          <Signup/>;
 
-    //       <Signup/>;
-
-    //   </AuthProvider>
-    //  </>
+      </AuthProvider>
+     </>
   );
 }
 
