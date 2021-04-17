@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import './style.css';
 // import Avatar from './Avatar';
 import NavBar from '../NavBar';
@@ -13,12 +13,23 @@ function ChatApp() {
       <NavBar />
 
       <Container>
-        <div className='message-window fixed-bottom'>
-          <MsgArea />
-          {/* <Avatar /> */}
-          <InputBox />
-          {/* <Send /> */}
-        </div>
+        <Row>
+          <Col>
+            <div className='contact-list'>
+              <ul>
+                <li>Ray</li>
+              </ul>
+            </div>
+          </Col>
+          <Col>
+            <div className='message-window fixed-bottom'>
+              <MsgArea />
+              {/* <Avatar /> */}
+              <InputBox />
+              {/* <Send /> */}
+            </div>
+          </Col>
+        </Row>
       </Container>
     </>
   );
