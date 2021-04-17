@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
+import './style.css';
 // import Avatar from './Avatar';
 import NavBar from '../NavBar';
 import InputBox from '../InputBox/index';
@@ -7,15 +9,18 @@ import MsgArea from '../MsgArea';
 
 function ChatApp() {
   return (
-    <div className='container'>
+    <>
       <NavBar />
-      <div className='message-window fixed-bottom'>
-        <MsgArea />
-        {/* <Avatar /> */}
-        <InputBox />
-        {/* <Send /> */}
-      </div>
-    </div>
+
+      <Container>
+        <div className='message-window fixed-bottom'>
+          <MsgArea />
+          {/* <Avatar /> */}
+          <InputBox />
+          {/* <Send /> */}
+        </div>
+      </Container>
+    </>
   );
 }
 
