@@ -17,6 +17,7 @@ class InputBox extends Component {
 
   handleClick = () => {
     console.log('Your input value is: ', this.state.msgValue)
+    this.props.fun(this.state.msgValue)
   };
 
   render() {
