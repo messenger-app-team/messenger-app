@@ -2,7 +2,7 @@
 import './App.css';
 import Signup from "./components/Signup";
 import ChatApp from './components/ChatApp/ChatApp';
-import {AuthProvider} from './contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
@@ -10,13 +10,13 @@ function App() {
     
    
       <>
-      <ChatApp />
-
-      <AuthProvider>
+      {/* <AuthProvider>
 
           <Signup/>;
 
-      </AuthProvider>
+      </AuthProvider> */}
+
+        <ChatApp></ChatApp>
      </>
   );
 }
