@@ -1,13 +1,33 @@
-import React, { Component } from 'react';
-import { Navbar, Nav, FormControl, Form, Button } from 'react-bootstrap';
+import React, { Component, useState} from 'react';
+import { Navbar, Nav, FormControl, Form, Button, Alert } from 'react-bootstrap';
+import {Link, useHistory} from "react-router-dom";
+import {useAuth} from "../../contexts/AuthContext";
 
-class NavBar extends Component {
-  render() {
+
+
+function NavBar () {
+  const [error, setError] = useState('')
+  const{logout} = useAuth();
+  const history = useHistory();
+
+   async function handleLogout() {
+      setError('')
+      try {
+        await logout()
+        history.push('/login')
+
+      } catch {
+        setError('Failed to log out')
+      }
+    }
+
     return (
+      <>
       <Navbar bg='primary' variant='dark'>
         <Navbar.Brand href='#home'>Messenger</Navbar.Brand>
+        {error && <Alert variant="danger">{error}</Alert>}
         <Nav className='mr-auto'>
-          <Nav.Link href='#logout'>Logout</Nav.Link>
+          <Nav.Link variant = "link" onClick={handleLogout}>Log Out</Nav.Link>
         </Nav>
         <Form inline>
           <FormControl
@@ -18,8 +38,9 @@ class NavBar extends Component {
           <Button variant='outline-light'>Search</Button>
         </Form>
       </Navbar>
+      </>
     );
-  }
+  
 }
 
 export default NavBar;
