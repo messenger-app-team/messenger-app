@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Badge } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import './style.css';
 
 // create the side bar for contacts here and add on the left or right side of the chat app div
