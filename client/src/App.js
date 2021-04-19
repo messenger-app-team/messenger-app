@@ -1,4 +1,5 @@
 import Signup from "./components/Signup";
+import Login from "./components/Login"
 import ChatApp from "./components/ChatApp/ChatApp";
 import { AuthProvider } from './contexts/AuthContext';
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -12,8 +13,9 @@ function App() {
       <Router>
         <AuthProvider>
           <Switch>
-            <Route path="/chatapp" component={ChatApp} />
+            <Route exact path="/" component={ChatApp} />
             <Route path="/signup" component={Signup} />
+            <Route path="/Login" component={Login} />
           </Switch>
         </AuthProvider>
       </Router>
