@@ -1,13 +1,16 @@
+// import react and css style 
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import './style.css';
+
+// import other children components to this parent components.
 // import Avatar from './Avatar';
 import NavBar from '../NavBar';
 import InputBox from '../InputBox/index';
 import MsgArea from '../MsgArea';
 import Contacts from '../Contacts';
-// import Send from './Send';
 
+// build a function to handle data flow from other children's components.
 function ChatApp() {
   const [msgValue, setMsgValue] = useState('')
 
@@ -28,7 +31,6 @@ function ChatApp() {
           <MsgArea value={msgValue} />
           {/* <Avatar /> */}
           <InputBox fun={addUser} />
-          {/* <Send /> */}
         </div>
       </Container>
     </>

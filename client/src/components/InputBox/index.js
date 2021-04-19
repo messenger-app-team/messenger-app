@@ -1,7 +1,9 @@
+// import react and css style
 import React, { Component } from 'react';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import './style.css';
 
+// build a function to take input value and pass it to parent components.
 class InputBox extends Component {
   constructor(props) {
     super(props);
