@@ -1,10 +1,11 @@
+// import react and css style
 import React, { Component, useState} from 'react';
 import { Navbar, Nav, FormControl, Form, Button, Alert } from 'react-bootstrap';
+// import other components
 import {Link, useHistory} from "react-router-dom";
 import {useAuth} from "../../contexts/AuthContext";
 
-
-
+// build navbar to handle other utility functions.
 function NavBar () {
   const [error, setError] = useState('')
   const{logout} = useAuth();
