@@ -1,3 +1,7 @@
 .message-window {
     margin: 1rem;
 }
+
+.message-app {
+    height: 100%;
+}
