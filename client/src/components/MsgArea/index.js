@@ -1,8 +1,8 @@
+// import react and css style
 import React, { Component } from 'react';
-import InputBox from '../InputBox/index';
 import './style.css';
 
-
+// build child components that takes input data from parent components then render it on to the page.
 class MsgArea extends Component {
   render() {
     console.log(this.props)
