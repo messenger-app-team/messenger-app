@@ -12,3 +12,5 @@ const app = firebase.initializeApp({
 
 export const auth = app.auth()
 export default app
+
+// will need to export db from here to send to the front end

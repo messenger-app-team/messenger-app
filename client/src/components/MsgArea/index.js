@@ -9,15 +9,16 @@ import './style.css';
 
 class MsgArea extends Component {
   render() {
-    console.log(this.props)
+    console.log(this.props);
+    // Will need to add username here from the state?
     return (
-      <div>
-        <Card className='msg-area' border='light' style={{ width: '100%' }}>
+      <div className='msg-area'>
+        <Card className='msg-area' border='light'>
           <Card.Header>To: Username</Card.Header>
           <Card.Body>
             <Card.Text>
-                <p>Received Message</p>
-                <p>{this.props.value}</p>
+              <p>Received Message</p>
+              <p>{this.props.value}</p>
             </Card.Text>
           </Card.Body>
         </Card>

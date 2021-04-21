@@ -2,9 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './style.css';
+//Import firebase realtime db
+// import { db } from '../services/firebase';
 
 // import other children components to this parent components.
-// import Avatar from './Avatar';
 import NavBar from '../NavBar';
 import InputBox from '../InputBox/index';
 import MsgArea from '../MsgArea';
@@ -20,18 +21,28 @@ function ChatApp() {
     setMsgValue(newMsg)
     // add to end of of the msgArr pass off msgArr to component that will accept, will need to decide how to send off right now it's value
     setMsgArr([...msgArr, newMsg]);
+
+
+      // idea for getting new messages in
+      // db.ref('all_messages/0001').on('value', messages => {
+      //   let allMessages = [];
+      //   messages.forEach(message => {
+      //     allMessages.push(message.val())
+      //   });
+      //   this.setState({ msgArr: allMessages})
+      // });
+
+
   };
 
   return (
     <>
       <NavBar />
-
       <Container>
         <Row>
           <Col className='message-app' sm={4}>
             <Contacts />
           </Col>
-
           <Col className='message-app' sm={8}>
             <div className='message-window'>
               <Row>
@@ -46,7 +57,6 @@ function ChatApp() {
             <InputBox fun={addUser} />
             </div>
           </Col>
-          
         </Row>
       </Container>
     </>
