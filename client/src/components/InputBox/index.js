@@ -11,14 +11,20 @@ class InputBox extends Component {
     this.state = {
       msgValue: '',
     };
+    this.onKeyUp = this.onKeyUp.bind(this);
   };
-
+  
   updateInput = (event) => {
     this.setState({ msgValue: event.target.value })
   };
+  
+  onKeyUp = (event) => {
+    if (event.key === "Enter") {
+      this.props.fun(this.state.msgValue)
+    };
+  };
 
   handleClick = () => {
-    console.log('Your input value is: ', this.state.msgValue)
     this.props.fun(this.state.msgValue)
   };
 
@@ -28,6 +34,7 @@ class InputBox extends Component {
         <FormControl
           type='text'
           onChange={this.updateInput}
+          onKeyPress={this.onKeyUp}
           placeholder='Message'
           aria-label='Message'
           aria-describedby='basic-addon2'
