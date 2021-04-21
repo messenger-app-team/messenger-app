@@ -1,5 +1,6 @@
 // import react and css style
 import React, { Component } from 'react';
+import { Card } from 'react-bootstrap';
 import './style.css';
 
 // build child components that takes input data from parent components then render it on to the page.
@@ -10,14 +11,16 @@ class MsgArea extends Component {
   render() {
     console.log(this.props)
     return (
-      <div className='msg-area'>
-        <div class='d-flex flex-row'>
-          <div class='p-2'>Received Messages</div>
-        </div>
-        <div class='d-flex flex-column'>
-          <div class='p-2'>Sent Messages</div>
-          <p>{this.props.value}</p>
-        </div>
+      <div>
+        <Card className='msg-area' border='light' style={{ width: '100%' }}>
+          <Card.Header>To: Username</Card.Header>
+          <Card.Body>
+            <Card.Text>
+                <p>Received Message</p>
+                <p>{this.props.value}</p>
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </div>
     );
   }
