@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Nav, Tab } from 'react-bootstrap';
+import { Nav, Tab, Button } from 'react-bootstrap';
 import './style.css';
 import UserContacts from '../UserContacts';
 import UserMessages from '../UserMessages';;
@@ -12,7 +12,7 @@ const contacts_key = 'contacts';
 function Contacts() {
   // current state set to contacts only for now
   const [activeKey, setActiveKey] = useState(contacts_key);
-  const openM
+  const openMessage = messages_key === activeKey;
 
   // onSelect will set the event key of the state to whichever tab was clicked
   return (
@@ -35,10 +35,13 @@ function Contacts() {
             <UserMessages />
           </Tab.Pane>
         </Tab.Content>
-        <Button className='sidebar-btn'></Button>
+        <Button className='sidebar-btn'>
+          {openMessage ? 'New Message' : 'Add Contact'}
+        </Button>
       </Tab.Container>
     </div>
   );
+  // Ternary {openMessage ? 'New Message' : 'Add Contact'} will check if the active key of the messages tab (const openMessage) is true it will say new message in the button otherwise the button will say add contact.
 }
 
 export default Contacts;
