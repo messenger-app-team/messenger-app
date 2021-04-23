@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Nav, Tab, Button } from 'react-bootstrap';
 import './style.css';
 import UserContacts from '../UserContacts';
-import UserMessages from '../UserMessages';;
+import UserMessages from '../UserMessages';
+import NewMsgModal from '../NewMsgModal';
+import NewContactModal from '../NewContactModal';
 
 const messages_key = 'messages';
 const contacts_key = 'contacts';
@@ -12,6 +14,7 @@ const contacts_key = 'contacts';
 function Contacts() {
   // current state set to contacts only for now
   const [activeKey, setActiveKey] = useState(contacts_key);
+  // Boolean will variable will be used for ternary on the sidebar-btn
   const openMessage = messages_key === activeKey;
 
   // onSelect will set the event key of the state to whichever tab was clicked
@@ -35,13 +38,19 @@ function Contacts() {
             <UserMessages />
           </Tab.Pane>
         </Tab.Content>
-        <Button className='sidebar-btn'>
+        <Button className='rounded-0 sidebar-btn'>
           {openMessage ? 'New Message' : 'Add Contact'}
         </Button>
       </Tab.Container>
+      {/* <Modal show={openModal}>
+        <NewMsgModal>
+      </Modal> */}
     </div>
   );
+
   // Ternary {openMessage ? 'New Message' : 'Add Contact'} will check if the active key of the messages tab (const openMessage) is true it will say new message in the button otherwise the button will say add contact.
+
+  // Modal pop up to new contact or create new convo
 }
 
 export default Contacts;
