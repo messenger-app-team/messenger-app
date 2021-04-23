@@ -30,24 +30,25 @@ function NavBar () {
 
     return (
       <div className='nav-bar'>
-      <Navbar bg='primary' variant='dark'>
-        <Navbar.Brand href='#home'>Messenger</Navbar.Brand>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Nav className='mr-auto'>
-          <Nav.Link variant = "link" onClick={handleLogout}>Log Out</Nav.Link>
-        </Nav>
-        <Form inline>
-          <FormControl
-            type='text'
-            placeholder='User Search'
-            className='mr-sm-2'
-          />
-          <Button variant='outline-light'>Search</Button>
-        </Form>
-      </Navbar>
+        <Navbar bg='primary' variant='dark'>
+          <Navbar.Brand href='#home'>Messenger</Navbar.Brand>
+          {error && <Alert variant='danger'>{error}</Alert>}
+          <Nav className='mr-auto'>
+            <Nav.Link variant='link' onClick={handleLogout}>
+              Log Out
+            </Nav.Link>
+          </Nav>
+          <Form inline>
+            <FormControl
+              type='text'
+              placeholder='User Search'
+              className='mr-sm-2'
+            />
+            <Button variant='outline-light'>Search</Button>
+          </Form>
+        </Navbar>
       </div>
     );
-  gi
 }
 
 export default NavBar;
