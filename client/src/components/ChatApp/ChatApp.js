@@ -25,11 +25,12 @@ function ChatApp() {
   return (
     <>
       <NavBar />
-
       <Container>
         <Row>
-          <Col className='message-app' sm={4}>
-            <Contacts />
+          <Col>
+            <div className='sidebar d-flex'>
+              <Contacts />
+            </div>
           </Col>
 
           <Col className='message-app' sm={8}>
@@ -41,12 +42,11 @@ function ChatApp() {
           </Col>
         </Row>
         <Row className='fixed-bottom'>
-          <Col  sm={{ span: 8, offset: 4 }}>
+          <Col sm={{ span: 8, offset: 4 }}>
             <div className='message-window'>
-            <InputBox fun={addUser} />
+              <InputBox fun={addUser} />
             </div>
           </Col>
-          
         </Row>
       </Container>
     </>
