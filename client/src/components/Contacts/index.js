@@ -1,32 +1,47 @@
-import React, { Component } from 'react';
-import { Nav } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Nav, Tab } from 'react-bootstrap';
 import './style.css';
+import UserContacts from '../UserContacts';
+import UserMessages from '../UserMessages';;
+
+const messages_key = 'messages';
+const contacts_key = 'contacts';
 
 // create the side bar for contacts here and add on the left or right side of the chat app div
 
-class Contacts extends Component {
-    render() {
+function Contacts() {
+  // current state set to contacts only for now
+  const [activeKey, setActiveKey] = useState(contacts_key);
+  const openM
 
-        return (
-          <div className='contact-menu'>
-            <Nav defaultActiveKey='/home' className='flex-column'>
-              <h4>Contacts</h4>
-              <Nav.Link eventKey='link-1' className='user-contact'>
-                Haley
-              </Nav.Link>
-              <Nav.Link eventKey='link-2' className='user-contact'>
-                JZ
-              </Nav.Link>
-              <Nav.Link eventKey='link-3' className='user-contact'>
-                Ray
-              </Nav.Link>
-              <Nav.Link eventKey='link-4' className='user-contact'>
-                Ruben
-              </Nav.Link>
-            </Nav>
-          </div>
-        );
-    }
-};
+  // onSelect will set the event key of the state to whichever tab was clicked
+  return (
+    <div className='sidebar d-flex'>
+      <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
+        <Nav variant='tabs' className='justify-content-center'>
+          <Nav.Item>
+            <Nav.Link eventKey={contacts_key}>Contacts</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey={messages_key}>Messages</Nav.Link>
+          </Nav.Item>
+        </Nav>
+
+        <Tab.Content className='overflow-auto flex-grow-1'>
+          <Tab.Pane eventKey={contacts_key}>
+            <UserContacts />
+          </Tab.Pane>
+          <Tab.Pane eventKey={messages_key}>
+            <UserMessages />
+          </Tab.Pane>
+        </Tab.Content>
+        <Button className='sidebar-btn'></Button>
+      </Tab.Container>
+    </div>
+  );
+}
 
 export default Contacts;
+
+
+// Will need to continue working on getting the users id on the page once connected to db
