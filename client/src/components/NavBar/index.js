@@ -1,15 +1,21 @@
 // import react and css style
-import React, { Component, useState} from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, FormControl, Form, Button, Alert } from 'react-bootstrap';
 // import other components
 import {Link, useHistory} from "react-router-dom";
 import {useAuth} from "../../contexts/AuthContext";
 
+// Key to use for navbar links
+const messenger_key = 'messenger';
+
 // build navbar to handle other utility functions.
 function NavBar () {
-  const [error, setError] = useState('')
-  const{logout} = useAuth();
+  const [error, setError] = useState('');
+  // Set key depending on which page the user is currently on
+  const [activeKey, setActiveKey] = useState(messenger_key);
+  const { logout } = useAuth();
   const history = useHistory();
+  const messengerOpen = messenger_key === activeKey;
 
    async function handleLogout() {
       setError('')
@@ -23,7 +29,7 @@ function NavBar () {
     }
 
     return (
-      <>
+      <div className='nav-bar'>
       <Navbar bg='primary' variant='dark'>
         <Navbar.Brand href='#home'>Messenger</Navbar.Brand>
         {error && <Alert variant="danger">{error}</Alert>}
@@ -39,9 +45,9 @@ function NavBar () {
           <Button variant='outline-light'>Search</Button>
         </Form>
       </Navbar>
-      </>
+      </div>
     );
-  
+  gi
 }
 
 export default NavBar;
