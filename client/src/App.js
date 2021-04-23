@@ -1,6 +1,7 @@
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ChatApp from './components/ChatApp/ChatApp';
+import PublicChat from './components/PublicChat/PublicChat';
 import { AuthProvider } from './contexts/AuthContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -16,6 +17,7 @@ function App() {
             <PrivateRoute exact path='/' component={ChatApp} />
             <Route path='/signup' component={Signup} />
             <Route path='/Login' component={Login} />
+            <Route path='/public' component={PublicChat} />
           </Switch>
         </AuthProvider>
       </Router>
