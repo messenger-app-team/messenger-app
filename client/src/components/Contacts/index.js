@@ -1,59 +1,68 @@
-import React, { useState } from 'react';
-import { Nav, Tab, Button } from 'react-bootstrap';
-import './style.css';
-import UserContacts from '../UserContacts';
-import UserMessages from '../UserMessages';
-import NewMsgModal from '../NewMsgModal';
-import NewContactModal from '../NewContactModal';
-
-const messages_key = 'messages';
-const contacts_key = 'contacts';
+import React, { Component, useEffect } from "react";
+import { Nav } from "react-bootstrap";
+import { db } from "../../firebase";
+import { useAuth } from "../../contexts/AuthContext";
+import "./style.css";
 
 // create the side bar for contacts here and add on the left or right side of the chat app div
 
-function Contacts() {
-  // current state set to contacts only for now
-  const [activeKey, setActiveKey] = useState(contacts_key);
-  // Boolean will variable will be used for ternary on the sidebar-btn
-  const openMessage = messages_key === activeKey;
+const Contacts = ({ updateSelectedChat, selectedChat, updateChatId }) => {
+  const { currentUser } = useAuth();
 
-  // onSelect will set the event key of the state to whichever tab was clicked
+  useEffect(async () => {
+    let Id = `${selectedChat}_${currentUser.uid}`;
+    updateSelectedChat(selectedChat);
+
+    let chatId = await db
+      .ref()
+      .child("chats")
+      .orderByChild("chatId")
+      .equalTo(Id)
+      .once("value");
+
+    if (chatId.exists()) {
+      updateChatId(Id);
+    } else {
+      Id = `${currentUser.uid}_${selectedChat}`;
+      updateChatId(Id);
+    }
+  }, []);
+
+  const handleSelect = async (receiver) => {
+    let Id = `${receiver}_${currentUser.uid}`;
+    updateSelectedChat(receiver);
+
+    let chatId = await db
+      .ref()
+      .child("chats")
+      .orderByChild("chatId")
+      .equalTo(Id)
+      .once("value");
+
+    if (chatId.exists()) {
+      updateChatId(Id);
+    } else {
+      Id = `${currentUser.uid}_${receiver}`;
+      updateChatId(Id);
+    }
+  };
+
   return (
-    <div className='sidebar d-flex'>
-      <Tab.Container activeKey={activeKey} onSelect={setActiveKey}>
-        <Nav variant='tabs' className='justify-content-center'>
-          <Nav.Item>
-            <Nav.Link eventKey={contacts_key}>Contacts</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey={messages_key}>Messages</Nav.Link>
-          </Nav.Item>
-        </Nav>
-
-        <Tab.Content className='overflow-auto flex-grow-1'>
-          <Tab.Pane eventKey={contacts_key}>
-            <UserContacts />
-          </Tab.Pane>
-          <Tab.Pane eventKey={messages_key}>
-            <UserMessages />
-          </Tab.Pane>
-        </Tab.Content>
-        <Button className='rounded-0 sidebar-btn'>
-          {openMessage ? 'New Message' : 'Add Contact'}
-        </Button>
-      </Tab.Container>
-      {/* <Modal show={openModal}>
-        <NewMsgModal>
-      </Modal> */}
+    <div className="contact-menu">
+      <Nav defaultActiveKey="/home" className="flex-column">
+        <h4>Contacts</h4>
+        <Nav.Link
+          eventKey="link-1"
+          className="user-contact"
+          onClick={() => {
+            handleSelect("public");
+          }}
+        >
+          Public Room
+        </Nav.Link>
+      </Nav>
     </div>
   );
-
-  // Ternary {openMessage ? 'New Message' : 'Add Contact'} will check if the active key of the messages tab (const openMessage) is true it will say new message in the button otherwise the button will say add contact.
-
-  // Modal pop up to new contact or create new convo
-}
+};
 
 export default Contacts;
-
-
-// Will need to continue working on getting the users id on the page once connected to db
