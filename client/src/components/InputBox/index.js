@@ -13,6 +13,7 @@ const InputBox = ({ updateMessages, selectedChat, chatId }) => {
     setState(event.target.value);
   };
 
+  // Click event will connect to db and push the new message into chats
   const handleClick = async () => {
     try {
       await db.ref("chats").push({
@@ -28,9 +29,8 @@ const InputBox = ({ updateMessages, selectedChat, chatId }) => {
     } finally {
       setState("");
     }
-    // console.log("Your input value is: ", msgValue);
-    // updateMessages(msgValue);
   };
+  
   return (
     <InputGroup className="msg-input">
       <FormControl
