@@ -70,7 +70,7 @@ const Contacts = ({
   const handleSelect = async (receiver) => {
     let Id = `${receiver}_${currentUserName}`;
     updateSelectedChat(receiver);
-    clearMessages([]);
+    //clearMessages([]);
     let chatId = await db
       .ref()
       .child("chats")
@@ -100,6 +100,7 @@ const Contacts = ({
                   eventKey="link-1"
                   className="user-contact"
                   onClick={() => {
+                    if(selectedChat!==Object.keys(contact)[0])
                     handleSelect(Object.keys(contact)[0]);
                   }}
                 >
