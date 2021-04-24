@@ -1,17 +1,16 @@
-// import react and css style
 import React, { useState, useEffect } from "react";
+// Firebase live database will handle real-time communication
+import { db } from "../../firebase";
+import { useAuth } from "../../contexts/AuthContext";
 import { Container, Row, Col } from "react-bootstrap";
 import "./style.css";
 
-// import other children components to this parent components.
-// import Avatar from './Avatar';
+// import other children components to this parent component.
 import NavBar from "../NavBar";
 import InputBox from "../InputBox/index";
 import MsgArea from "../MsgArea";
 import Contacts from "../Contacts";
-import { db } from "../../firebase";
 import capitalizeFirstLetter from "../../helpers";
-import { useAuth } from "../../contexts/AuthContext";
 
 // build a function to handle data flow from other children's components.
 function ChatApp() {
