@@ -1,0 +1,10 @@
+.contact-menu {
+    overflow-y: auto;
+  }
+  
+  .contactsArea {
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    height: 78vh;
+  }
+  
