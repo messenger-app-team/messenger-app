@@ -1,34 +1,50 @@
 // import react and css style
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { Navbar, Nav, FormControl, Form, Button, Alert } from "react-bootstrap";
 // import other components
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import AsyncSelect from "react-select/async";
+// import AsyncSelect from "react-select/async";
 import { db } from "../../firebase";
+import { AsyncTypeahead } from "react-bootstrap-typeahead";
+import "react-bootstrap-typeahead/css/Typeahead.css";
+import profileImage from "../../images/user.png";
+import capitalizeFirstLetter from "../../helpers";
 
 // build navbar to handle other utility functions.
-function NavBar() {
+function NavBar({ currentUserName }) {
   const [error, setError] = useState("");
-  const [results, setResults] = useState([
-    { value: "public", label: "public" },
-  ]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [options, setOptions] = useState([]);
 
-  const { logout } = useAuth();
+  const { logout, currentUser } = useAuth();
   const history = useHistory();
 
-  useEffect(() => {
-    db.ref("users")
-      .orderByChild("userName")
-      .on("value", (snap) => {
-        const newResults = [];
-        Object.values(snap.val()).forEach((result) => {
-          newResults.push({ value: result.userName, label: result.userName });
-        });
-        newResults.push({ value: "public", label: "public" });
-        setResults(newResults);
+  const addUserToChat = (e, option) => {
+    db.ref("Contacts")
+      .child(currentUserName)
+      .once("value", async (snap) => {
+        if (snap && snap.val()) {
+          const friends = Object.values(snap.val());
+          if (friends.filter((e) => option in e).length === 0) {
+            const makeObject = {};
+            makeObject[option] = true;
+            await db.ref("Contacts").child(currentUserName).push(makeObject);
+            delete makeObject[option];
+            makeObject[currentUserName] = true;
+            await db.ref("Contacts").child(option).push(makeObject);
+          }
+        } else {
+          const makeObject = {};
+          makeObject[option] = true;
+          await db.ref("Contacts").child(currentUserName).push(makeObject);
+          delete makeObject[option];
+          makeObject[currentUserName] = true;
+          await db.ref("Contacts").child(option).push(makeObject);
+        }
       });
-  }, []);
+
+  };
 
   async function handleLogout() {
     setError("");
@@ -40,39 +56,14 @@ function NavBar() {
     }
   }
 
-  const loadOptions = (inputValue, callback) => {
+  const handleSearch = (query) => {
+    setIsLoading(true);
     db.ref("users")
       .orderByChild("userName")
-      .startAt(inputValue.trim().toLowerCase())
-      .on("value", (snap) => {
-        const newResults = [];
-        Object.values(snap.val()).forEach((result) => {
-          newResults.push({ value: result.userName, label: result.userName });
-        });
-        newResults.push({ value: "public", label: "public" });
-        setResults(newResults);
-        return results.map((i) => {
-          return {
-            label: i.userName,
-            value: i.userName,
-          };
-        });
-      });
-  };
-
-  const handleInputChange = (newValue) => {
-    db.ref("users")
-      .orderByChild("userName")
-      .startAt(newValue.trim().toLowerCase())
-      .on("value", (snap) => {
-        const newResults = [];
-
-        Object.values(snap.val()).forEach((result) => {
-          newResults.push({ value: result.userName, label: result.userName });
-        });
-        newResults.push({ value: "public", label: "public" });
-
-        setResults(newResults);
+      .startAt(query.trim().toLowerCase())
+      .once("value", (snap) => {
+        setOptions(Object.values(snap.val()));
+        setIsLoading(false);
       });
   };
 
@@ -86,21 +77,38 @@ function NavBar() {
             Log Out
           </Nav.Link>
         </Nav>
-
-        <Form inline>
-          <AsyncSelect
-            cacheOptions
-            loadOptions={loadOptions}
-            // defaultOptions={results}
-            onInputChange={handleInputChange}
-          />
-          {/* <FormControl
-            type="text"
-            placeholder="User Search"
-            className="mr-sm-2"
-          />
-          <Button variant="outline-light">Search</Button> */}
-        </Form>
+        {/* <Form inline> */}
+        <AsyncTypeahead
+          filterBy={() => true}
+          id="async-example"
+          isLoading={isLoading}
+          labelKey="userName"
+          minLength={1}
+          onSearch={handleSearch}
+          options={options}
+          placeholder="Search for a user..."
+          renderMenuItemChildren={(option, props) => (
+            <div
+              key={option.uid}
+              onClick={(e) => {
+                addUserToChat(e, option.userName);
+              }}
+            >
+              <img
+                alt={option.userName}
+                src={profileImage}
+                style={{
+                  height: "24px",
+                  marginRight: "10px",
+                  width: "24px",
+                }}
+              />
+              <span>{option.userName}</span>
+            </div>
+          )}
+        />
+        {/* </Form> */}
+        <span className="m-2">{capitalizeFirstLetter(currentUserName)}</span>
       </Navbar>
     </>
   );
