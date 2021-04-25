@@ -43,7 +43,6 @@ function NavBar({ currentUserName }) {
           await db.ref("Contacts").child(option).push(makeObject);
         }
       });
-
   };
 
   async function handleLogout() {
