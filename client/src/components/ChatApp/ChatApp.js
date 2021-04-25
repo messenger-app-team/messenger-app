@@ -14,6 +14,7 @@ import capitalizeFirstLetter from "../../helpers";
 
 // build a function to handle data flow from other children's components.
 function ChatApp() {
+  // Update state to currrent user session, load message data from db
   const { currentUser } = useAuth();
   const [currentUserName, setCurrentUserName] = useState("");
   const [msgValue, setMsgValue] = useState("");
@@ -23,7 +24,8 @@ function ChatApp() {
 
   useEffect(() => {
     setMsgArr([]);
-
+    // Connection to firebase live database to get and post new messages
+    // Firebase live database will enable messages to be recieved in real time
     db.ref()
       .child("users")
       .orderByChild("email")
@@ -33,7 +35,7 @@ function ChatApp() {
           setCurrentUserName(Object.values(snapshot.val())[0].userName);
         }
       });
-
+    // Public messages
     if (chatId && selectedChat !== "public") {
       db.ref()
         .child("chats")
@@ -57,6 +59,7 @@ function ChatApp() {
     }
   }, [chatId]);
 
+  // Check to see if id to update exists and updates, else new id is created
   const updateChatId = (chatId) => {
     setChatId(chatId);
   };
@@ -71,7 +74,8 @@ function ChatApp() {
 
   const updateMessages = (newMsg) => {
     setMsgValue(newMsg);
-    // add to end of of the msgArr pass off msgArr to component that will accept, will need to decide how to send off right now it's value
+    // Spread operator add to end of of the msgArr pass off msgArr to component that will accept
+    // will need to decide how to send off right now it's value
     setMsgArr([...msgArr, newMsg]);
   };
 
