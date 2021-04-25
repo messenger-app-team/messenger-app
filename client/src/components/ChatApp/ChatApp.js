@@ -23,7 +23,8 @@ function ChatApp() {
   const [chatId, setChatId] = useState();
 
   useEffect(() => {
-    setMsgArr([]);
+    // setMsgArr([]);
+    console.log(chatId);
 
     db.ref()
       .child("users")
@@ -36,6 +37,9 @@ function ChatApp() {
       });
 
     if (chatId && selectedChat !== "public") {
+      console.log("where40");
+      console.log(chatId);
+
       db.ref()
         .child("chats")
         .orderByChild("chatId")
@@ -46,6 +50,8 @@ function ChatApp() {
           }
         });
     } else {
+      console.log("where50");
+
       db.ref()
         .child("chats")
         .orderByChild("type")
