@@ -64,18 +64,20 @@ function ChatApp() {
     setChatId(chatId);
   };
 
+  // Set and update selected chat id
   const updateSelectedChat = (selectedChat) => {
     setSelectedChat(selectedChat);
   };
 
+  // Set the state back to empty array
   const clearMessages = () => {
     setMsgArr([]);
   };
 
+  // Add new message to end of msgArr and set state to update
   const updateMessages = (newMsg) => {
     setMsgValue(newMsg);
-    // Spread operator add to end of of the msgArr pass off msgArr to component that will accept
-    // will need to decide how to send off right now it's value
+    // Spread operator add to end of of the msgArr 
     setMsgArr([...msgArr, newMsg]);
   };
 
