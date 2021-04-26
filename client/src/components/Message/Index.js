@@ -1,15 +1,17 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { db } from "../../firebase";
 import { useAuth } from "../../contexts/AuthContext";
 import "./style.css";
 import capitalizeFirstLetter from "../../helpers";
 
 export default function Index({ msg }) {
-  const [userName, setUserName] = useState("You");
+  const [userName, setUserName] = useState("");
   const { message, from } = msg;
   const { currentUser } = useAuth();
 
   useLayoutEffect(() => {
+    // setUserName("");
+
     if (currentUser.email !== from) {
       db.ref()
         .child("users")
@@ -20,6 +22,8 @@ export default function Index({ msg }) {
             setUserName(Object.values(snapshot.val())[0].userName);
           }
         });
+    }else{
+      setUserName("You");
     }
   });
   return (

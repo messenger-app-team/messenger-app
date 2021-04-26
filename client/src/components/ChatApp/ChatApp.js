@@ -22,10 +22,12 @@ function ChatApp() {
   const [selectedChat, setSelectedChat] = useState("");
   const [chatId, setChatId] = useState();
 
+  // Connection to firebase live database to get and post new messages
+  // Firebase live database will enable messages to be recieved in real time
   useEffect(() => {
-    setMsgArr([]);
-    // Connection to firebase live database to get and post new messages
-    // Firebase live database will enable messages to be recieved in real time
+    // setMsgArr([]);
+    console.log(chatId);
+
     db.ref()
       .child("users")
       .orderByChild("email")
@@ -37,6 +39,9 @@ function ChatApp() {
       });
     // Public messages
     if (chatId && selectedChat !== "public") {
+      console.log("where40");
+      console.log(chatId);
+
       db.ref()
         .child("chats")
         .orderByChild("chatId")
@@ -47,6 +52,8 @@ function ChatApp() {
           }
         });
     } else {
+      console.log("where50");
+
       db.ref()
         .child("chats")
         .orderByChild("type")
@@ -77,7 +84,7 @@ function ChatApp() {
   // Add new message to end of msgArr and set state to update
   const updateMessages = (newMsg) => {
     setMsgValue(newMsg);
-    // Spread operator add to end of of the msgArr 
+    // Spread operator add to end of of the msgArr
     setMsgArr([...msgArr, newMsg]);
   };
 
