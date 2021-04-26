@@ -1,12 +1,12 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Nav } from "react-bootstrap";
 import { db } from "../../firebase";
 import { useAuth } from "../../contexts/AuthContext";
 import "./style.css";
 import capitalizeFirstLetter from "../../helpers";
 
-// create the side bar for contacts here and add on the left or right side of the chat app div
-
+// create the side bar for contacts here
+// and add on the left or right side of the chat app div
 const Contacts = ({
   updateSelectedChat,
   selectedChat,
@@ -21,6 +21,9 @@ const Contacts = ({
     },
   ]);
 
+  // useEffect will run a db query each time currentUserName changes
+  // Live db will push new messages to each user in the convo 'on value' change
+  // linting error due to 'race conditions' may need bug fix
   useEffect(async () => {
     if (currentUserName)
       db.ref("Contacts")
@@ -33,6 +36,7 @@ const Contacts = ({
         });
   }, [currentUserName]);
 
+  // use effect will run when slectedChat changes and update the chat id (or create it)
   useEffect(async () => {
     if (currentUserName) {
       let Id = `${selectedChat}_${currentUserName}`;
@@ -67,6 +71,7 @@ const Contacts = ({
   //       });
   // }, [currentUserName]);
 
+  // Create a new chat id with usernames of each person and update
   const handleSelect = async (receiver) => {
     let Id = `${receiver}_${currentUserName}`;
     updateSelectedChat(receiver);
@@ -100,8 +105,8 @@ const Contacts = ({
                   eventKey="link-1"
                   className="user-contact"
                   onClick={() => {
-                    if(selectedChat!==Object.keys(contact)[0])
-                    handleSelect(Object.keys(contact)[0]);
+                    if (selectedChat !== Object.keys(contact)[0])
+                      handleSelect(Object.keys(contact)[0]);
                   }}
                 >
                   {capitalizeFirstLetter(Object.keys(contact)[0])}
