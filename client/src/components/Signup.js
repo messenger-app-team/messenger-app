@@ -5,6 +5,8 @@ import { Container, Form, Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { db } from "../firebase";
 
+import "./Signup.css"
+
 function Signup() {
   const nameRef = useRef();
   const emailRef = useRef();
@@ -66,27 +68,25 @@ function Signup() {
         className="d-flex align-items-center justify-content-center"
         style={{ minHeight: "100vh", backgroundColor: "none" }}
       >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <Card>
+        <div className="inputField w-100" style={{ maxWidth: "400px" }}>
+          <Card className="signup">
             {error && <Alert variant="danger">{error}</Alert>}
             <Card.Body>
               <h2 className="text-center mb-4">Sign Up</h2>
               <Form>
                 <Form.Group id="username">
-                  <Form.Label>User Name</Form.Label>
-                  <Form.Control type="text" ref={nameRef} required />
+                  <Form.Control className="inputField" placeholder="User Name" type="text" ref={nameRef} required />
                 </Form.Group>
                 <Form.Group id="email">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" ref={emailRef} required />
+                  <Form.Control  className="inputField" placeholder="Email" type="email" ref={emailRef} required />
                 </Form.Group>
                 <Form.Group id="password">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" ref={passwordRef} required />
+                  <Form.Control  className="inputField" placeholder="Password" type="password" ref={passwordRef} required />
                 </Form.Group>
                 <Form.Group id="password-confirm">
-                  <Form.Label>Password Confirmation</Form.Label>
                   <Form.Control
+                   className="inputField"
+                    placeholder="Password Confirmation"
                     type="password"
                     ref={passwordConfirmRef}
                     required
@@ -97,7 +97,7 @@ function Signup() {
                 onClick={handleSubmit}
                 disabled={loading}
                 type="submit"
-                className="w-100 text-center mt-2"
+                className="buttonField w-100 text-center mt-2"
               >
                 Signup
               </Button>
