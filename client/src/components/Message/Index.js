@@ -31,40 +31,17 @@ export default function Index({ msg }) {
       <div className={userName === "You" ? "msg-right" : "msgLeft"}>
         {userName === "You" ? (
           <>
-            <span
-              style={{
-                backgroundColor: "#b4d6fd",
-                color: "black",
-                padding: "10px",
-                borderRadius: "6px",
-                marginRight: "10px",
-              }}
-            >
+            <span className = "youMessages">
               {message}
             </span>
           </>
         ) : (
           <>
-            <span
-              style={{
-                backgroundColor: "#F5F5F5",
-                color: "black",
-                padding: "10px 6px",
-                marginRight: "10px",
-                borderRadius: "50px",
-              }}
-            >
+            <span className = "othersUserName">
               {capitalizeFirstLetter(userName)}
             </span>
 
-            <span
-              style={{
-                backgroundColor: "pink",
-                color: "black",
-                padding: "10px 10px",
-                borderRadius: "6px",
-              }}
-            >
+            <span className= "otherUserMessage">
               {message}
             </span>
           </>

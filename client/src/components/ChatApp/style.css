@@ -1,21 +1,41 @@
 .message-window {
+  /* background-color: purple; */
     /* margin-bo: 2rem; */
     height: 100vh;
   }
+  .chatWindow{
+    margin-left: 0;
+    width: 3000px;
+  }
+  .mt-5{
+    background-color: transparent;
+    margin-left: 0;
+  }
   
   .message-app {
-    height: 100vh;
+    background-color: transparent;
+    margin-left: 0;
+    /* height: 100vh; */
+    
+
   }
   
   .chatHeading {
     width: 100%;
     padding: 1rem;
+    color: white;
+    border-color: white;
     text-align: center;
-    background-color: #E8E8E8;
+    border-bottom-width: 5px !important;
+    border-bottom-color: white; 
+    border-bottom-style: solid;
+    border-bottom-left-radius:700px;
+    border-bottom-right-radius: -50px;
   
   }
   
   .chatHeadingText {
+    background-color: orange;
     text-shadow: center;
     text-justify: center;
     font-style: bold;

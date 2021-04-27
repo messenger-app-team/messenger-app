@@ -1,5 +1,46 @@
 .msg-right {
+  /* background-color: blue; */
   width: 100%;
   display: flex;
   justify-content: flex-end;
 }
+
+.youMessages{
+  /* background-color: white; */
+  
+  border-left-style: solid;
+  border-right-style: solid;
+  border-radius: 10px;
+  border-color:white;
+  color:white;
+  font-size: large;
+  font-weight:normal;
+  padding:5px;
+  margin-right: 10px;;
+}
+
+.othersUserName{
+  /* background-color: white; */
+  color: white;
+  padding: 5px 6px;
+  margin-Right: 5px;
+  border-Radius: 10px;
+  /* border-top: solid; */
+  border-bottom: solid;
+  font-weight:normal;
+}
+
+.otherUserMessage{
+  /* background-image: radial-gradient(white, white); */
+  border-left-style: solid;
+  border-right-style: solid;
+  border-radius: 10px;
+  border-color:white;
+  color:white;
+  font-size: large;
+  font-weight:normaler;
+  padding:5px;
+  margin-right: 20px;;
+
+}
+

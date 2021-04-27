@@ -86,8 +86,8 @@ function ChatApp() {
     <>
       <NavBar currentUserName={currentUserName} />
 
-      <Container>
-        <Row className="mt-5">
+      <Container className= "chatWindow" >
+        <Row className=" mt-5">
           <Col className="message-app" sm={3}>
             <Contacts
               updateSelectedChat={updateSelectedChat}

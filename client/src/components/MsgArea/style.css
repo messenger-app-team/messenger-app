@@ -1,9 +1,15 @@
 .msg-area {
-  background-color: #f8f8f8;
+  background-color: transparent;
   width: 100%;
   height: 78.5vh;
   padding-left: 10px;
   padding-bottom: 20px;
   border-radius: 20px;
   overflow: auto;
+  border-left-style: double;
+  border-left-width: 10px;
+  border-left-color: white;
+  border-right-style: double;
+  border-right-width: 10px;
+  border-right-color: white;
 }

@@ -11,6 +11,8 @@ import "react-bootstrap-typeahead/css/Typeahead.css";
 import profileImage from "../../images/user.png";
 import capitalizeFirstLetter from "../../helpers";
 
+import "./NavBar.css"
+
 // build navbar to handle other utility functions.
 function NavBar({ currentUserName }) {
   const [error, setError] = useState("");
@@ -68,7 +70,7 @@ function NavBar({ currentUserName }) {
 
   return (
     <>
-      <Navbar bg="primary" variant="dark">
+      <Navbar className= "navBar" variant="dark">
         <Navbar.Brand href="#home">Messenger</Navbar.Brand>
         {error && <Alert variant="danger">{error}</Alert>}
         <Nav className="mr-auto">
