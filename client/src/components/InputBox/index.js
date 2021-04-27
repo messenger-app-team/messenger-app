@@ -31,12 +31,20 @@ const InputBox = ({ updateMessages, selectedChat, chatId }) => {
     // console.log("Your input value is: ", msgValue);
     // updateMessages(msgValue);
   };
+
+const handleKey = (event) =>{
+  if (event.key === "Enter") {
+    handleClick();
+  }
+};
+
   return (
     <InputGroup className="msg-input">
       <FormControl
         value={msgValue}
         type="text"
         onChange={updateInput}
+        onKeyPress={handleKey}
         placeholder="Message"
         aria-label="Message"
         aria-describedby="basic-addon2"
