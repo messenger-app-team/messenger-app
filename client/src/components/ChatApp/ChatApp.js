@@ -1,20 +1,20 @@
-// import react and css style
 import React, { useState, useEffect } from "react";
+// Firebase live database will handle real-time communication
+import { db } from "../../firebase";
+import { useAuth } from "../../contexts/AuthContext";
 import { Container, Row, Col } from "react-bootstrap";
 import "./style.css";
 
-// import other children components to this parent components.
-// import Avatar from './Avatar';
+// import other children components to this parent component.
 import NavBar from "../NavBar";
 import InputBox from "../InputBox/index";
 import MsgArea from "../MsgArea";
 import Contacts from "../Contacts";
-import { db } from "../../firebase";
 import capitalizeFirstLetter from "../../helpers";
-import { useAuth } from "../../contexts/AuthContext";
 
 // build a function to handle data flow from other children's components.
 function ChatApp() {
+  // Update state to currrent user session, load message data from db
   const { currentUser } = useAuth();
   const [currentUserName, setCurrentUserName] = useState("");
   const [msgValue, setMsgValue] = useState("");
@@ -22,6 +22,8 @@ function ChatApp() {
   const [selectedChat, setSelectedChat] = useState("");
   const [chatId, setChatId] = useState();
 
+  // Connection to firebase live database to get and post new messages
+  // Firebase live database will enable messages to be recieved in real time
   useEffect(() => {
     // setMsgArr([]);
     console.log(chatId);
@@ -35,7 +37,7 @@ function ChatApp() {
           setCurrentUserName(Object.values(snapshot.val())[0].userName);
         }
       });
-
+    // Public messages
     if (chatId && selectedChat !== "public") {
       console.log("where40");
       console.log(chatId);
@@ -64,21 +66,25 @@ function ChatApp() {
     }
   }, [chatId]);
 
+  // Check to see if id to update exists and updates, else new id is created
   const updateChatId = (chatId) => {
     setChatId(chatId);
   };
 
+  // Set and update selected chat id
   const updateSelectedChat = (selectedChat) => {
     setSelectedChat(selectedChat);
   };
 
+  // Set the state back to empty array
   const clearMessages = () => {
     setMsgArr([]);
   };
 
+  // Add new message to end of msgArr and set state to update
   const updateMessages = (newMsg) => {
     setMsgValue(newMsg);
-    // add to end of of the msgArr pass off msgArr to component that will accept, will need to decide how to send off right now it's value
+    // Spread operator add to end of of the msgArr
     setMsgArr([...msgArr, newMsg]);
   };
 
