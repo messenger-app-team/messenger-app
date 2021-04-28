@@ -28,8 +28,6 @@ const InputBox = ({ updateMessages, selectedChat, chatId }) => {
     } finally {
       setState("");
     }
-    // console.log("Your input value is: ", msgValue);
-    // updateMessages(msgValue);
   };
 
 const handleKey = (event) =>{

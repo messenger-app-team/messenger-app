@@ -1,7 +1,5 @@
 .message-window {
-  /* background-color: purple; */
-    /* margin-bo: 2rem; */
-    height: 100vh;
+  height: 100vh;
   }
   .chatWindow{
     margin-left: 0;
@@ -15,9 +13,6 @@
   .message-app {
     background-color: transparent;
     margin-left: 0;
-    /* height: 100vh; */
-    
-
   }
   
   .chatHeading {
