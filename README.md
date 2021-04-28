@@ -3,7 +3,7 @@
 
   ## Description
 
-  This is a messenger app for keeping in touch with friends and family and to me new people! This app allows the user to create an account, search users by username and add new contacts. The public chat allows each user to communicate with other members of the Social Butterfly Community. This app is built on a serverless architecture using React and Firebase.
+  This is a messenger app for keeping in touch with friends and family and to meet new people! This app allows the user to create an account, search users by username and add new contacts. The public chat allows each user to communicate with other members of the Social Butterfly Community. This app is built on a serverless architecture using React and Firebase.
 
   ## Table of Contents
 
@@ -43,20 +43,25 @@
   This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  ## Contact
+  ## Authors
+  
+  ### Haley Halsey
+  - email: haleyhalsey@yahoo.com
+  - github: [hshalsey] (https://github.com/hshalsey)
 
-  ### Authors: Haley Halsey, Ray Luna, Ruben Sainz Linarez, Jiaqian Zhao 
-
-  If you have any questions about the repo, open an issue or contact me directly at:
-  - E-Mail: haleyhalsey@yahoo.com
-            leon.luna.ray@gmail.com
-            rsainzlinarez@gmail.com
-            workmailjz@gmail.com
-
-  - GitHub: [hshalsey] (https://github.com/hshalsey)
-            [leon-luna-ray](https://github.com/leon-luna-ray)
-            [rsainzlinarez](https://github.com/rsainzlinarez)
-            [JZSweet] (https://github.com/JZSweet)
+  ### Ray Luna
+  - email: leon.luna.ray@gmail.com
+  - github: [leon-luna-ray](https://github.com/leon-luna-ray)
+  
+  ### Ruben Sainz Linarez
+  - email: rsainzlinarez@gmail.com
+  - github: [rsainzlinarez](https://github.com/rsainzlinarez)
+  
+  ### Jiaqian Zhao 
+  - email: workmailjz@gmail.com
+  - github: [JZSweet] (https://github.com/JZSweet)
+  
+  If you have any questions about the repo, or an issue please contact us via email.
 
   ## Links
 
