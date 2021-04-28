@@ -10,8 +10,6 @@ export default function Index({ msg }) {
   const { currentUser } = useAuth();
 
   useLayoutEffect(() => {
-    // setUserName("");
-
     if (currentUser.email !== from) {
       db.ref()
         .child("users")

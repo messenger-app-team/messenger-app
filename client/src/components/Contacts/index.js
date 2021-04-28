@@ -57,19 +57,7 @@ const Contacts = ({
       }
     }
   }, [selectedChat]);
-
-  // useEffect(() => {
-  //   if (currentUserName)
-  //     db.ref("Contacts")
-  //       .child(currentUserName)
-  //       .on("value", async (snap) => {
-  //         if (snap && snap.val()) {
-  //           const temp = Object.values(snap.val());
-  //           setContacts([...contacts, ...temp]);
-  //         }
-  //       });
-  // }, [currentUserName]);
-
+  
   // Create a new chat id with usernames of each person and update
   const handleSelect = async (receiver) => {
     let Id = `${receiver}_${currentUserName}`;
