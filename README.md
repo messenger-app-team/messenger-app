@@ -45,11 +45,18 @@
 
   ## Contact
 
-  Authors: Haley Halsey, Ray Luna, Ruben Sainz Linarez, Jiaqian Zhao 
+  ### Authors: Haley Halsey, Ray Luna, Ruben Sainz Linarez, Jiaqian Zhao 
 
   If you have any questions about the repo, open an issue or contact me directly at:
-  - E-Mail: leon.luna.ray@gmail.com
-  - GitHub: [leon-luna-ray](https://github.com/leon-luna-ray)
+  - E-Mail: haleyhalsey@yahoo.com
+            leon.luna.ray@gmail.com
+            rsainzlinarez@gmail.com
+            workmailjz@gmail.com
+
+  - GitHub: [hshalsey] (https://github.com/hshalsey)
+            [leon-luna-ray](https://github.com/leon-luna-ray)
+            [rsainzlinarez](https://github.com/rsainzlinarez)
+            [JZSweet] (https://github.com/JZSweet)
 
   ## Links
 
