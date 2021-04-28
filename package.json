@@ -18,9 +18,9 @@
     "type": "git",
     "url": "git+https://github.com/messenger-app-team/messenger-app.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["messenger", "social butterfly", "chat", "instant messenger"],
+  "author": "Haley Halsey, Ray Luna, Ruben Sainz Linarez, Jiaqian Zhao",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/messenger-app-team/messenger-app/issues"
   },
