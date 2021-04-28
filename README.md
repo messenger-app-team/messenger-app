@@ -47,7 +47,7 @@
   
   ### Haley Halsey
   - email: haleyhalsey@yahoo.com
-  - github: [hshalsey] (https://github.com/hshalsey)
+  - github: [hshalsey](https://github.com/hshalsey)
 
   ### Ray Luna
   - email: leon.luna.ray@gmail.com
@@ -59,7 +59,7 @@
   
   ### Jiaqian Zhao 
   - email: workmailjz@gmail.com
-  - github: [JZSweet] (https://github.com/JZSweet)
+  - github: [JZSweet](https://github.com/JZSweet)
   
   If you have any questions about the repo, or an issue please contact us via email.
 
