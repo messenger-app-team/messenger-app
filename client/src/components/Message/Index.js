@@ -18,8 +18,6 @@ export default function Index({ msg }) {
   }, []);
 
   useLayoutEffect(() => {
-    // setUserName("");
-
 
     if (currentUser.email !== from) {
       db.ref()

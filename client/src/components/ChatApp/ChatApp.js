@@ -25,9 +25,6 @@ function ChatApp() {
   // Connection to firebase live database to get and post new messages
   // Firebase live database will enable messages to be recieved in real time
   useEffect(() => {
-    // setMsgArr([]);
-    console.log(chatId);
-
     db.ref()
       .child("users")
       .orderByChild("email")
@@ -39,27 +36,27 @@ function ChatApp() {
       });
     // Public messages
     if (chatId && selectedChat !== "public") {
-      console.log("where40");
-      console.log(chatId);
-
       db.ref()
         .child("chats")
         .orderByChild("chatId")
         .equalTo(chatId)
         .on("value", (snapshot) => {
           if (snapshot && snapshot.val()) {
+            if (Object.values(snapshot.val())[0]?.chatId == chatId)
             setMsgArr(Object.values(snapshot.val()));
           }
         });
     } else {
-      console.log("where50");
-
       db.ref()
         .child("chats")
         .orderByChild("type")
         .equalTo("public")
         .on("value", (snapshot) => {
           if (snapshot && snapshot.val()) {
+            if (
+              Object.values(snapshot.val())[0]?.chatId.includes("public") ==
+              chatId?.includes("public")
+              )
             setMsgArr(Object.values(snapshot.val()));
           }
         });
