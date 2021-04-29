@@ -90,7 +90,7 @@ function ChatApp() {
       <NavBar currentUserName={currentUserName} />
 
       <Container className= "chatWindow" >
-        <Row className=" mt-5">
+        <Row className="messengerSection mt-5">
           <Col className="message-app" sm={3}>
             <Contacts
               updateSelectedChat={updateSelectedChat}
@@ -108,13 +108,13 @@ function ChatApp() {
                 </h4>
               </Row>
 
-              <div className="message-window">
-                <Row>
+              <div className="messageW message-window">
+                <Row className="messageW">
                   <MsgArea messages={msgArr} selectedChat={selectedChat} />
-                </Row>
-                <Row>
-                  <Col>
-                    <InputBox
+                </Row >
+                <Row >       
+                  <Col >
+                    <InputBox 
                       updateMessages={updateMessages}
                       selectedChat={selectedChat}
                       chatId={chatId}

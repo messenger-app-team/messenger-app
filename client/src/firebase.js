@@ -3,7 +3,7 @@ import "firebase/auth";
 import "firebase/database";
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyBIAtoQ_g8YQ2WyYiqYa5ifh5OkvRbaiEg",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
   databaseURL: "https://auth-development-f27f8-default-rtdb.firebaseio.com/",
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,

@@ -1,9 +1,10 @@
 .message-window {
-  height: 100vh;
+  height: 950 !important;
   }
   .chatWindow{
-    margin-left: 0;
-    width: 3000px;
+    margin-top: 5px !important;
+    margin-bottom: 30px !important;
+    /* width: 3000px !important; */
   }
   .mt-5{
     background-color: transparent;
@@ -34,4 +35,15 @@
     text-shadow: center;
     text-justify: center;
     font-style: bold;
+  }
+
+  .messageW{
+    height:90%;
+    margin-top: 0px;
+    /* background-color: red !important; */
+  }
+  .messengerSection{
+   height: 50px;
+   margin-top: 10px !important;
+   
   }

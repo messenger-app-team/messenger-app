@@ -4,3 +4,15 @@ border-bottom-width: 10px;
 border-bottom-right-radius: 50px;
 border-bottom-color: white;
 }
+.logo{
+    height: 50px;
+}
+
+.userName{
+color:white;
+}
+
+.searchBar{
+    margin-right: auto;
+    background-color: transparent;
+}

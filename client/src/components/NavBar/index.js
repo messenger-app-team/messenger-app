@@ -1,6 +1,6 @@
 // import react and css style
 import React, { useEffect, useState, Fragment } from "react";
-import { Navbar, Nav, FormControl, Form, Button, Alert } from "react-bootstrap";
+import { Navbar, Nav, FormControl, Form, Button, Alert, Image } from "react-bootstrap";
 // import other components
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
@@ -10,6 +10,7 @@ import { AsyncTypeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import profileImage from "../../images/user.png";
 import capitalizeFirstLetter from "../../helpers";
+import logo from "../../images/favicon.png";
 
 import "./NavBar.css"
 
@@ -71,15 +72,16 @@ function NavBar({ currentUserName }) {
   return (
     <>
       <Navbar className= "navBar" variant="dark">
-        <Navbar.Brand href="#home">Messenger</Navbar.Brand>
+      <Image className="logo" src={logo} rounded />
+        <Navbar.Brand href="/">Social Butterfly</Navbar.Brand>
         {error && <Alert variant="danger">{error}</Alert>}
-        <Nav className="mr-auto">
+        <Nav className="searchBar mr-auto">
           <Nav.Link variant="link" onClick={handleLogout}>
             Log Out
           </Nav.Link>
         </Nav>
         {/* <Form inline> */}
-        <AsyncTypeahead
+        <AsyncTypeahead className="searchBar"
           filterBy={() => true}
           id="async-example"
           isLoading={isLoading}
@@ -109,7 +111,7 @@ function NavBar({ currentUserName }) {
           )}
         />
         {/* </Form> */}
-        <span className="m-2">{capitalizeFirstLetter(currentUserName)}</span>
+        <span className="userName m-2">Hello {capitalizeFirstLetter(currentUserName)}</span>
       </Navbar>
     </>
   );
