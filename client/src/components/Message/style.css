@@ -8,8 +8,8 @@
   border-left-style: solid;
   border-right-style: solid;
   border-radius: 10px;
-  border-color:white;
-  color:white;
+  border-color:#dbf6e9;
+  color:#dbf6e9;
   font-size: large;
   font-weight:normal;
   padding:5px;
@@ -17,7 +17,7 @@
 }
 
 .othersUserName{
-  color: white;
+  color: #dbf6e9;
   padding: 5px 6px;
   margin-Right: 5px;
   border-Radius: 10px;
@@ -29,8 +29,8 @@
   border-left-style: solid;
   border-right-style: solid;
   border-radius: 10px;
-  border-color:white;
-  color:white;
+  border-color:#dbf6e9;
+  color:black;
   font-size: large;
   font-weight:normaler;
   padding:5px;

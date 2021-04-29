@@ -18,11 +18,11 @@
   .chatHeading {
     width: 100%;
     padding: 1rem;
-    color: white;
-    border-color: white;
+    color: #dbf6e9;
+    border-color: #dbf6e9;
     text-align: center;
     border-bottom-width: 5px !important;
-    border-bottom-color: white; 
+    border-bottom-color: #dbf6e9; 
     border-bottom-style: solid;
     border-bottom-left-radius:700px;
     border-bottom-right-radius: -50px;
@@ -30,7 +30,7 @@
   }
   
   .chatHeadingText {
-    background-color: orange;
+    background-color: #dbf6e9;
     text-shadow: center;
     text-justify: center;
     font-style: bold;

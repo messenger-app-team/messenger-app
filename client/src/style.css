@@ -1,5 +1,5 @@
 body {
   overflow: hidden;
-  background-image: linear-gradient( to  right, black, rgb(2, 62, 138), rgb(2, 62, 138),rgb(2, 62, 138), black );
-  background-color: rgb(2, 62, 138);
+  background-image: linear-gradient( to  right,black, #012a4a, #2a6f97, #89c2d9, #2a6f97, #012a4a, black);
+  background-color: #89c2d9,;
 }

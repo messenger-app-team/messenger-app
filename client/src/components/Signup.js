@@ -53,7 +53,7 @@ function Signup() {
         email: emailRef.current.value.trim(),
         timestamp: Date.now(),
       });
-      
+
       history.push("/");
     } catch (error) {
       setError("Failed to create account");
@@ -72,20 +72,20 @@ function Signup() {
           <Card className="signup">
             {error && <Alert variant="danger">{error}</Alert>}
             <Card.Body>
-              <h2 className="text-center mb-4">Sign Up</h2>
+              <h2 className="text-center mb-4" style={{color: "#023047"}} >Sign Up</h2>
               <Form>
                 <Form.Group id="username">
                   <Form.Control className="inputField" placeholder="User Name" type="text" ref={nameRef} required />
                 </Form.Group>
                 <Form.Group id="email">
-                  <Form.Control  className="inputField" placeholder="Email" type="email" ref={emailRef} required />
+                  <Form.Control className="inputField" placeholder="Email" type="email" ref={emailRef} required />
                 </Form.Group>
                 <Form.Group id="password">
-                  <Form.Control  className="inputField" placeholder="Password" type="password" ref={passwordRef} required />
+                  <Form.Control className="inputField" placeholder="Password" type="password" ref={passwordRef} required />
                 </Form.Group>
                 <Form.Group id="password-confirm">
                   <Form.Control
-                   className="inputField"
+                    className="inputField"
                     placeholder="Password Confirmation"
                     type="password"
                     ref={passwordConfirmRef}
