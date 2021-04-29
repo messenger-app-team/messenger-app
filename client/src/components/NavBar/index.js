@@ -79,7 +79,7 @@ function NavBar({ currentUserName }) {
           </Nav.Link>
         </Nav>
         {/* <Form inline> */}
-        <AsyncTypeahead
+        <AsyncTypeahead className="search"
           filterBy={() => true}
           id="async-example"
           isLoading={isLoading}
@@ -87,7 +87,7 @@ function NavBar({ currentUserName }) {
           minLength={1}
           onSearch={handleSearch}
           options={options}
-          placeholder="Search for a user..."
+          placeholder="Search for a users..."
           renderMenuItemChildren={(option, props) => (
             <div
               key={option.uid}
