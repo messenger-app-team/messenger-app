@@ -2,22 +2,18 @@
 border-bottom-style: double;
 border-bottom-width: 10px;
 border-bottom-right-radius: 50px;
-<<<<<<< HEAD
-border-bottom-color: white;
+border-bottom-color: #dbf6e9;
 }
+
 .logo{
     height: 50px;
+    margin-right: 10px;
 }
 
-.userName{
-color:white;
+.welcomeUser{
+    font-size: larger;
+    font-weight: bolder;
 }
-
 .searchBar{
-    margin-right: auto;
-    background-color: transparent;
+margin-right: auto;
 }
-=======
-border-bottom-color: #dbf6e9;
-};
->>>>>>> main

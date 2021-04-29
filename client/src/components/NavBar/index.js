@@ -1,10 +1,6 @@
 // import react and css style
-import React, { useEffect, useState, Fragment } from "react";
-<<<<<<< HEAD
-import { Navbar, Nav, FormControl, Form, Button, Alert, Image } from "react-bootstrap";
-=======
-import { Navbar, Nav, Alert } from "react-bootstrap";
->>>>>>> main
+import React, { useEffect, useState, } from "react";
+import { Navbar, Nav, Alert, Image} from "react-bootstrap";
 // import other components
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
@@ -76,27 +72,16 @@ function NavBar({ currentUserName }) {
   return (
     <>
       <Navbar className= "navBar" variant="dark">
-<<<<<<< HEAD
       <Image className="logo" src={logo} rounded />
         <Navbar.Brand href="/">Social Butterfly</Navbar.Brand>
         {error && <Alert variant="danger">{error}</Alert>}
         <Nav className="searchBar mr-auto">
           <Nav.Link variant="link" onClick={handleLogout}>
-=======
-        <Navbar.Brand href="#home" style={{color: "#dbf6e9"}}>Messenger</Navbar.Brand>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Nav className="mr-auto">
-          <Nav.Link variant="link" onClick={handleLogout} style={{color: "#dbf6e9"}}>
->>>>>>> main
             Log Out
           </Nav.Link>
         </Nav>
         {/* <Form inline> */}
-<<<<<<< HEAD
         <AsyncTypeahead className="searchBar"
-=======
-        <AsyncTypeahead className="search"
->>>>>>> main
           filterBy={() => true}
           id="async-example"
           isLoading={isLoading}
@@ -126,11 +111,7 @@ function NavBar({ currentUserName }) {
           )}
         />
         {/* </Form> */}
-<<<<<<< HEAD
-        <span className="userName m-2">Hello {capitalizeFirstLetter(currentUserName)}</span>
-=======
-        <span className="m-2" style={{color: "#dbf6e9"}}>{capitalizeFirstLetter(currentUserName)}</span>
->>>>>>> main
+        <span className="welcomeUser m-2" style={{color: "#dbf6e9"}}>Hello {capitalizeFirstLetter(currentUserName)}</span>
       </Navbar>
     </>
   );
