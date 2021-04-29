@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useAuth } from '../contexts/AuthContext'
-import { Container, Form, Button, Card, Alert } from 'react-bootstrap'
+import { Container, Form, Button, Card, Alert, Image } from 'react-bootstrap';
+import Logo from '../images/favicon.png';
 import { Link, useHistory } from "react-router-dom";
 
 import "./Login.css";
@@ -29,31 +30,53 @@ function Login() {
 
   return (
     <>
-      <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh", backgroundColor: "none" }}>
-        <div className=" w-100" style={{ maxWidth: "400px" }}>
-          <Card className="login">
-            {error && <Alert variant="danger">{error}</Alert>}
+      <Container
+        className='d-flex align-items-center justify-content-center'
+        style={{ minHeight: '100vh', backgroundColor: 'none' }}
+      >
+        <Image src={Logo} className='logo' />
+        <div className=' w-100' style={{ maxWidth: '400px' }}>
+          <Card className='login'>
+            {error && <Alert variant='danger'>{error}</Alert>}
             <Card.Body>
-              <h2 className="textStyle text-center mb-4">Log In</h2>
-              <Form className="emailPasswordSect">
-                <Form.Group className="textStyle" id="email">
-
-                  <Form.Control className="inputField" placeholder="Email" type="email" ref={emailRef} required />
+              <h2 className='textStyle text-center mb-4'>Log In</h2>
+              <Form className='emailPasswordSect'>
+                <Form.Group className='textStyle' id='email'>
+                  <Form.Control
+                    className='inputField'
+                    placeholder='Email'
+                    type='email'
+                    ref={emailRef}
+                    required
+                  />
                 </Form.Group>
-                <Form.Group className="textStyle" id="password">
-                  <Form.Control className="inputField" placeholder="Password" type="password" ref={passwordRef} required />
+                <Form.Group className='textStyle' id='password'>
+                  <Form.Control
+                    className='inputField'
+                    placeholder='Password'
+                    type='password'
+                    ref={passwordRef}
+                    required
+                  />
                 </Form.Group>
               </Form>
-              <Button onClick={handleSubmit} disabled={loading} type="submit" className="buttonField w-100 text-center mt-2" >Log In</Button>
+              <Button
+                onClick={handleSubmit}
+                disabled={loading}
+                type='submit'
+                className='buttonField w-100 text-center mt-2'
+              >
+                Log In
+              </Button>
             </Card.Body>
-            <div className=" textStyle w-100 text-center mt-2">
-              Don't have an account? <Link to="/Signup">Sign Up</Link>
+            <div className=' textStyle w-100 text-center mt-2'>
+              Don't have an account? <Link to='/Signup'>Sign Up</Link>
             </div>
           </Card>
         </div>
       </Container>
     </>
-  )
+  );
 }
 
 export default Login;
