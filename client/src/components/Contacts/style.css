@@ -3,15 +3,15 @@
   }
   
   .contactsArea {
-    color: white !important;
+    color: #dbf6e9 !important;
     background-color: transparent;
     border-top-right-radius: 70px;
     height: 78vh;
-    border-top: white;
+    border-top: #dbf6e9;
     border-top-style: double;
     border-top-width: 10px !important;
     border-bottom-left-radius: 70px;
-    border-bottom: white;
+    border-bottom: #dbf6e9;
     border-bottom-style: double;
     border-bottom-width: 10px !important;
 
@@ -21,7 +21,7 @@
    
     font-weight:bolder;
     font-size: larger;
-    color:white;
+    color:#dbf6e9;
     border-left-style: double;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 5px;;

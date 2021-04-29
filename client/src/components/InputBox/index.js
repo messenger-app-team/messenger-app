@@ -1,5 +1,5 @@
 // import react and css style
-import React, { Component, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 import "./style.css";
 import { db } from "../../firebase";
