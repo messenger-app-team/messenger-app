@@ -45,13 +45,26 @@
   This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  ## Contact
+ ## Authors
+  
+  ### Haley Halsey
+  - email: haleyhalsey@yahoo.com
+  - github: [hshalsey](https://github.com/hshalsey)
 
-  Authors: Haley Halsey, Ray Luna, Ruben Sainz Linarez, Jiaqian Zhao 
+  ### Ruben Sainz Linarez
+  - email: rsainzlinarez@gmail.com
+  - github: [rsainzlinarez](https://github.com/rsainzlinarez)
+  
+  ### Jiaqian Zhao 
+  - email: workmailjz@gmail.com
+  - github: [JZSweet](https://github.com/JZSweet)
 
-  If you have any questions about the repo, open an issue or contact me directly at:
-  - E-Mail: leon.luna.ray@gmail.com
-  - GitHub: [leon-luna-ray](https://github.com/leon-luna-ray)
+  ### Ray Luna
+  - email: leon.luna.ray@gmail.com
+  - github: [leon-luna-ray](https://github.com/leon-luna-ray)
+  
+  If you have any questions about the repo, or an issue please contact us via email.
+
 
   ## Links
 
