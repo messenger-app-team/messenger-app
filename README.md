@@ -5,7 +5,7 @@
 
   This is a messenger app for keeping in touch with friends and family and to me new people! This app allows the user to create an account, search users by username and add new contacts. The public chat allows each user to communicate with other members of the Social Butterfly Community. This app is built on a serverless architecture using React and Firebase.
 
-  [🚀 Launch App](https://608bbd97d2a9ea957b911b50--competent-johnson-41baaa.netlify.app/login) 
+  [🚀 Launch App](https://messenger-app-rsl.herokuapp.com/Login) 
 
   ## Table of Contents
 
@@ -55,6 +55,6 @@
 
   ## Links
 
-  - [Deployed Project](https://608bbd97d2a9ea957b911b50--competent-johnson-41baaa.netlify.app/login) 
+  - [Deployed Project](https://messenger-app-rsl.herokuapp.com/Login) 
 
   - [Project Repository](https://github.com/messenger-app-team/messenger-app)
