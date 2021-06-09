@@ -3,7 +3,7 @@
 
   ## Description
 
-  This is a messenger app for keeping in touch with friends and family and to me new people! This app allows the user to create an account, search users by username and add new contacts. The public chat allows each user to communicate with other members of the Social Butterfly Community. This app is built on a serverless architecture using React and Firebase.
+  This is a messenger app for keeping in touch with friends and family and to meet new people! This app allows the user to create an account, search users by username and add new contacts. The public chat allows each user to communicate with other members of the Social Butterfly Community. This app is built on a serverless architecture using React and Firebase.
 
   [🚀 Launch App](https://messenger-app-rsl.herokuapp.com/Login) 
 
